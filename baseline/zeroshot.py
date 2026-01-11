@@ -68,6 +68,16 @@ def main():
             predicted_labels.append(top_label)
 
     assert len(predicted_labels) == len(true_labels), "Longitudes no coinciden"
+    
+    # Guardar predicciones en CSV
+    df_preds = pd.DataFrame({
+        "text": texts,
+        "pred": predicted_labels,
+        "label": true_labels,
+    })
+    df_preds.to_csv("predicciones_test_zeroshot.csv", index=False, encoding="utf-8")
+    print("Predicciones guardadas en predicciones_test_zeroshot.csv")
+
 
     # Métricas
     accuracy = accuracy_score(true_labels, predicted_labels)
