@@ -74,12 +74,12 @@ def main():
     sys.stdout = buffer  # redirigir print a buffer temporal
     
     print("==== BASELINE TF-IDF + LogisticRegression ====")
-    print(f"Accuracy:   {acc:.4f}")
-    print(f"F1 (macro): {f1_macro:.4f}")
+    print(f"Accuracy:   {acc:.5f}")
+    print(f"F1 (macro): {f1_macro:.5f}")
     print()
 
     print("---- Clasification report ----")
-    print(classification_report(y_test, y_pred))
+    print(classification_report(y_test, y_pred, digits=5))
 
     # 5. Matriz de confusión
     classes_sorted = sorted(list(set(y_test)))

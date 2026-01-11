@@ -120,7 +120,7 @@ def main():
         all_labels, 
         all_preds, 
         target_names=target_names,
-        digits=4,
+        digits=5,
         zero_division=0
     )
     print(report)
@@ -128,7 +128,7 @@ def main():
     # Calcular accuracy por separado para mostrarla al final
     accuracy = accuracy_score(all_labels, all_preds)
     print("="*70)
-    print(f"ACCURACY FINAL: {accuracy:.4f}")
+    print(f"ACCURACY FINAL: {accuracy:.5f}")
     print("="*70)
     
     # Crear DataFrame con predicciones
